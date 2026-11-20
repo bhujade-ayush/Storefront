@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Design tokens — change these to rebrand the whole store. */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #16181d;          /* main text, dark buttons */
+  --color-body: #3d414a;         /* paragraph text */
+  --color-muted: #5b606b;        /* secondary text */
+  --color-line: #e4e4e0;         /* borders, dividers */
+  --color-line-strong: #c9c9c3;  /* input borders */
+  --color-surface: #f5f5f2;      /* light panels */
+  --color-canvas: #fafaf8;       /* chat background */
+  --color-brand: #1d4ed8;        /* primary buttons, links */
+  --color-brand-dark: #1e3a8a;   /* link hover */
+  --color-brand-soft: #e8eefc;   /* filter chips */
+  --color-sale: #b42318;         /* sale badges, errors */
+  --color-success: #15803d;      /* confirmations */
+}
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  a {
+    @apply text-brand hover:text-brand-dark;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+}
+
+/* Typing indicator dots in the assistant */
+@keyframes typing-dot {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+.typing-dot { animation: typing-dot 1.2s infinite ease-in-out; }
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .typing-dot { animation: none; opacity: 0.6; }
+}
