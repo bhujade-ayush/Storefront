@@ -14,7 +14,7 @@
   - npm
 
 ### Installation
-  `npm install \n
+  `npm install  
   npm run dev`
 
 ## Project Structure
