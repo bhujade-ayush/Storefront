@@ -10,8 +10,6 @@
 
 ## Getting Started
 ### Prerequisites
-  - Node
-  - npm
 
 ### Installation
   ```bash
